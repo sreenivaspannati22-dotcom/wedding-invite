@@ -1,0 +1,64 @@
+@import "tailwindcss";
+
+@theme {
+  --color-ivory: #fffaf3;
+  --color-cream: #f7efe4;
+  --color-blush: #f4d7d7;
+  --color-rose: #d9a6a6;
+  --color-champagne: #c6a15b;
+  --color-gold: #b88935;
+  --color-deep-brown: #4a3328;
+  --color-muted-brown: #7a5a45;
+  --color-overlay-dark: rgba(35, 20, 15, 0.55);
+
+  --font-great-vibes: "Great Vibes", cursive;
+  --font-cormorant: "Cormorant Garamond", serif;
+  --font-jost: "Jost", sans-serif;
+  --font-lora: "Lora", serif;
+  --font-montserrat: "Montserrat", sans-serif;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: var(--color-ivory);
+  color: var(--color-deep-brown);
+  font-family: var(--font-lora);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Base heading styles */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-cormorant);
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  ::before,
+  ::after {
+    animation-duration: 1ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 1ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+@keyframes hero-crossfade {
+  0% { opacity: 1; }
+  16% { opacity: 1; }
+  20% { opacity: 0; }
+  96% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@keyframes flip-in {
+  0% { transform: rotateX(90deg); opacity: 0; }
+  100% { transform: rotateX(0deg); opacity: 1; }
+}
+
+@keyframes flip-out {
+  0% { transform: rotateX(0deg); opacity: 1; }
+  100% { transform: rotateX(-90deg); opacity: 0; }
+}
